@@ -6,10 +6,6 @@ This tutorial will walk through practicing the Double Loop Workflow to create a 
 - PHP 7.2
 - [Composer](https://getcomposer.org/download/)
 
-### Recommended
-- [Postman App](https://www.getpostman.com/)
-- Chrome with the [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
-
 ## Setup - Do this before the conference!
 - `composer install` 
 - `docker-compose up -d`
@@ -27,13 +23,16 @@ use the correct IP address
 If you are unable to complete these steps before the tutorial, please message me on 
 Twitter [@jessicamauerhan](https://twitter.com/JessicaMauerhan) - and we will debug, 
 or we will get it working day of. 
-  
-
-  
-#### Info
-- [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
-- [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
 
 ## Run Project
 - First, follow the steps in the Setup section if you haven't already.
 - `docker-compose exec api vendor/bin/phinx migrate` will setup the database
+
+### Recommended
+- [Postman App](https://www.getpostman.com/)
+- Chrome with the [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
+- Tell PHP Storm you're using PHP 7.2 ![PHP Storm 7.2](https://i.imgur.com/WD99azD.png)
+
+#### Extra Resources / Info
+- [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
+- [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
