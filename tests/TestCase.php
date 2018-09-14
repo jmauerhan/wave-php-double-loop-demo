@@ -2,11 +2,11 @@
 
 namespace Test;
 
-use Faker\Factory;
+use Faker\Generator;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
-    /** @var \Generator */
+    /** @var Generator */
     protected $faker;
 
     public function __construct(?string $name = null, array $data = [], string $dataName = '')
