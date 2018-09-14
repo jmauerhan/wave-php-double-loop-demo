@@ -1,0 +1,51 @@
+version: '2'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ./:/var/www
+    environment:
+      - DB_ENGINE=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=chirper
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    ports:
+      - "3001:3001"
+    networks:
+      chirper:
+        aliases:
+          - api.chirper.com
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=chirper
+    ports:
+      - "5000:5432"
+    networks:
+      - chirper
+  frontend:
+    build:
+      context: ./app
+    ports:
+      - "8080:8080"
+    networks:
+      chirper:
+        aliases:
+        - local.chirper.com
+  chrome:
+    image: selenium/standalone-chrome:3.14.0-dubnium
+    ports:
+      - "4444:4444"
+    networks:
+      chirper:
+        aliases:
+          - chrome.chirper.com
+
+networks:
+  chirper:
