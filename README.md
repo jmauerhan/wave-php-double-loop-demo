@@ -38,12 +38,14 @@ or we will get it working day of.
 #### Extra Resources / Info
 - [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
 - [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
-- [Silex](https://silex.symfony.com/) 
-- [Phinx docs](http://docs.phinx.org/en/latest/)
-- [Valitron Validator](https://github.com/vlucas/valitron)
-- [Ramsey/Collection](https://github.com/ramsey/collection)
-- [PHP Unit Docs](https://phpunit.readthedocs.io/en/7.3/)
+
+#### Documentation for Dependencies
+- [Silex](https://silex.symfony.com/) - microframework / router
+- [Phinx docs](http://docs.phinx.org/en/latest/) - db migrations
+- [Valitron Validator](https://github.com/vlucas/valitron) - http request validation
+- [Ramsey/Collection](https://github.com/ramsey/collection) - typed collections of objects
+- [PHP Unit Docs](https://phpunit.readthedocs.io/en/7.3/) 
 - [Behat](http://behat.org/en/latest/)
-- [Behat Mink Extensions](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst)
-- [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/)
+- [Behat Mink Extensions](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst) - Mink is a browser driver
+- [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/) - PHP HTTP Client - used in some of our tests
 - [Faker](https://github.com/fzaninotto/Faker)
