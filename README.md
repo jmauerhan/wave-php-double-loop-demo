@@ -31,7 +31,9 @@ or we will get it working day of.
 ### Recommended
 - [Postman App](https://www.getpostman.com/)
 - Chrome with the [JSON Viewer extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
-- Tell PHP Storm you're using PHP 7.2 ![PHP Storm 7.2](https://i.imgur.com/WD99azD.png)
+- Tell PHP Storm you're using PHP 7.2 
+
+![PHP Storm 7.2](https://i.imgur.com/WD99azD.png)
 
 #### Extra Resources / Info
 - [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
