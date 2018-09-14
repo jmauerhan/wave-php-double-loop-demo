@@ -18,7 +18,7 @@ This tutorial will walk through practicing the Double Loop Workflow to create a 
 *Note:* If you're using docker-machine instead of Docker Desktop (Docker for Mac / Windows), 
 use the correct IP address
 
-- Browse to `api.chirper.com:3001` and confirm there is a PHP info page
+- Browse to http://api.chirper.com:3001 and confirm there is a PHP info page
 
 If you are unable to complete these steps before the tutorial, please message me on 
 Twitter [@jessicamauerhan](https://twitter.com/JessicaMauerhan) - and we will debug, 
