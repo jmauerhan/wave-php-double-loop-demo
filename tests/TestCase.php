@@ -2,6 +2,7 @@
 
 namespace Test;
 
+use Faker\Factory;
 use Faker\Generator;
 
 class TestCase extends \PHPUnit\Framework\TestCase
