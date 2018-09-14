@@ -38,3 +38,12 @@ or we will get it working day of.
 #### Extra Resources / Info
 - [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
 - [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
+- [Silex](https://silex.symfony.com/) 
+- [Phinx docs](http://docs.phinx.org/en/latest/)
+- [Valitron Validator](https://github.com/vlucas/valitron)
+- [Ramsey/Collection](https://github.com/ramsey/collection)
+- [PHP Unit Docs](https://phpunit.readthedocs.io/en/7.3/)
+- [Behat](http://behat.org/en/latest/)
+- [Behat Mink Extensions](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst)
+- [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/)
+- [Faker](https://github.com/fzaninotto/Faker)
