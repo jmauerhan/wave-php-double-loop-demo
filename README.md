@@ -42,6 +42,7 @@ or we will get it working day of.
 #### Extra Resources / Info
 - [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
 - [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
+- [Vue]() The frontend app is built using vue-c
 
 #### Documentation for Dependencies
 One of the things we focus on in this workflow is decoupling dependencies. Any of these can be replaced at any time by other tool. This demo is not meant to be specific to any of these third party libraries, we simply use them to solve a common problem such as routing or validation, unrelated to the business logic code.
