@@ -19,6 +19,9 @@ This tutorial will walk through practicing the Double Loop Workflow to create a 
 use the correct IP address
 
 - Browse to http://api.chirper.com:3001 and confirm there is a PHP info page
+- Browse to http://local.chirper.com:8080 and confirm there is a HTML/JS page with a form: (non-functional)
+
+![Chirper App](https://i.imgur.com/XynDDBt.png)
 
 If you are unable to complete these steps before the tutorial, please message me on 
 Twitter [@jessicamauerhan](https://twitter.com/JessicaMauerhan) - and we will debug, 
