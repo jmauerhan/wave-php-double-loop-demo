@@ -57,4 +57,4 @@ One of the things we focus on in this workflow is decoupling dependencies. Any o
 - [Behat](http://behat.org/en/latest/)
 - [Behat Mink Extensions](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst) - Mink is a browser driver
 - [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/) - PHP HTTP Client - used in some of our tests
-- [Faker](https://github.com/fzaninotto/Faker)
+- [Faker](https://github.com/fzaninotto/Faker) - Generates fake data 
