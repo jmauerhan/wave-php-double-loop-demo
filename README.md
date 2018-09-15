@@ -44,10 +44,14 @@ or we will get it working day of.
 - [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
 
 #### Documentation for Dependencies
+One of the things we focus on in this workflow is decoupling dependencies. Any of these can be replaced at any time by other tool. This demo is not meant to be specific to any of these third party libraries, we simply use them to solve a common problem such as routing or validation, unrelated to the business logic code.
+
 - [Silex](https://silex.symfony.com/) - microframework / router
 - [Phinx docs](http://docs.phinx.org/en/latest/) - db migrations
 - [Valitron Validator](https://github.com/vlucas/valitron) - http request validation
 - [Ramsey/Collection](https://github.com/ramsey/collection) - typed collections of objects
+
+#### Docs for Testing Tools
 - [PHP Unit Docs](https://phpunit.readthedocs.io/en/7.3/) 
 - [Behat](http://behat.org/en/latest/)
 - [Behat Mink Extensions](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst) - Mink is a browser driver
