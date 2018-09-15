@@ -21,6 +21,7 @@ use the correct IP address
 - Browse to http://api.chirper.com:3001 and confirm there is a PHP info page
 - Browse to http://local.chirper.com:8080 and confirm there is a HTML/JS page with a form: (non-functional)
 
+![API PHP Info Page](https://i.imgur.com/Kwe1c8L.png)
 ![Chirper App](https://i.imgur.com/XynDDBt.png)
 
 If you are unable to complete these steps before the tutorial, please message me on 
