@@ -12,5 +12,11 @@ interface JsonChirpTransformer
      */
     public function toChirp(string $json): Chirp;
 
+    /**
+     * @param Chirp $chirp
+     * @return string
+     *
+     * @throws TransformerException
+     */
     public function toJson(Chirp $chirp): string;
 }

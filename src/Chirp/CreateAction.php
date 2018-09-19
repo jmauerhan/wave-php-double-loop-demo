@@ -26,13 +26,14 @@ class CreateAction
             $json  = $request->getBody()->getContents();
             $chirp = $this->chirpTransformer->toChirp($json);
             $this->persistenceDriver->save($chirp);
-            $this->chirpTransformer->toJson($chirp);
+            $responseJson = $this->chirpTransformer->toJson($chirp);
+            return new ChirpCreatedResponse($responseJson);
         } catch (InvalidJsonException $exception) {
             return new InvalidChirpResponse([]);
         } catch (PersistenceDriverException $driverException) {
             return new InternalServerErrorResponse($driverException->getMessage());
+        } catch (TransformerException $transformerException) {
+            return new InternalServerErrorResponse($transformerException->getMessage());
         }
-
-        return new Response();
     }
 }
