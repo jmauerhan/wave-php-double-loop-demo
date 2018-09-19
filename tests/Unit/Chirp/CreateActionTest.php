@@ -12,6 +12,7 @@ use Chirper\Chirp\PersistenceDriverException;
 use Chirper\Http\InternalServerErrorResponse;
 use Chirper\Http\Request;
 use PHPUnit\Framework\MockObject\MockObject;
+use Ramsey\Uuid\Uuid;
 use Test\TestCase;
 
 class CreateActionTest extends TestCase
@@ -55,7 +56,8 @@ class CreateActionTest extends TestCase
 
     public function testCreateSendsChirpToPersistence()
     {
-        $chirp = new Chirp();
+        $uuid  = Uuid::uuid4()->toString();
+        $chirp = new Chirp($uuid, '', '', new \DateTime());
         $this->chirpTransformer->method('toChirp')
                                ->willReturn($chirp);
 
@@ -81,9 +83,22 @@ class CreateActionTest extends TestCase
 
     }
 
-//    public function testCreateSendsSavedChirpToTransformer()
-//    {
-//    }
+    public function testCreateSendsSavedChirpToTransformer()
+    {
+        $uuid  = Uuid::uuid4()->toString();
+        $chirp = new Chirp($uuid, '', '', new \DateTime());
+
+        $this->chirpTransformer->method('toChirp')
+                               ->willReturn($chirp);
+
+        $this->chirpTransformer->expects($this->once())
+                               ->method('toJson')
+                               ->with($chirp);
+
+        $request = new Request('POST', 'chirp', [], "{}");
+        $action  = new CreateAction($this->chirpTransformer, $this->persistenceDriver);
+        $action->create($request);
+    }
 //
 //    public function testCreateReturnsInternalServerErrorResponseOnTransformerException()
 //    {

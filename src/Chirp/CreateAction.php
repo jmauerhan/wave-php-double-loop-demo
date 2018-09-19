@@ -26,6 +26,7 @@ class CreateAction
             $json  = $request->getBody()->getContents();
             $chirp = $this->chirpTransformer->toChirp($json);
             $this->persistenceDriver->save($chirp);
+            $this->chirpTransformer->toJson($chirp);
         } catch (InvalidJsonException $exception) {
             return new InvalidChirpResponse([]);
         } catch (PersistenceDriverException $driverException) {
