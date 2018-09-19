@@ -17,6 +17,12 @@ class CreateChirpContext implements Context
     /** @var string */
     private $chirpText;
 
+    /** @var string */
+    private $id;
+
+    /** @var Client */
+    private $client;
+
     public function __construct()
     {
         $this->faker = Factory::create();
@@ -35,20 +41,20 @@ class CreateChirpContext implements Context
      */
     public function iSubmitTheChirp()
     {
-        $uuid    = Uuid::uuid4();
-        $baseUrl = "http://api.chirper.com:3001";
-        $client  = new Client(['base_uri' => $baseUrl]);
-        $json    = (object)[
+        $this->id     = Uuid::uuid4();
+        $baseUrl      = "http://api.chirper.com:3001";
+        $this->client = new Client(['base_uri' => $baseUrl]);
+        $json         = (object)[
             'data' => (object)[
                 'type'       => 'chirp',
-                'id'         => $uuid,
+                'id'         => $this->id,
                 'attributes' => (object)[
                     'text' => $this->chirpText
                 ]
             ]
         ];
 
-        $client->post('chirp', ['json' => $json]);
+        $this->client->post('chirp', ['json' => $json]);
     }
 
     /**
@@ -56,7 +62,15 @@ class CreateChirpContext implements Context
      */
     public function iShouldSeeItInMyTimeline()
     {
-        throw new PendingException();
+        $response     = $this->client->get('/');
+        $responseData = json_decode($response->getBody()->getContents());
+        $chirps       = $responseData->data;
+        foreach ($chirps AS $chirp) {
+            if ($chirp->id == $this->id) {
+                return;
+            }
+        }
+        throw new \Exception('Did not find the chirp');
     }
 
     /**
