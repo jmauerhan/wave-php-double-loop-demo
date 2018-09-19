@@ -5,6 +5,7 @@ namespace Test\Behavior\Context\Frontend;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\MinkExtension\Context\MinkContext;
 use Faker\Factory;
+use PHPUnit\Framework\Assert;
 
 class CreateChirpContext extends MinkContext
 {
@@ -52,7 +53,11 @@ class CreateChirpContext extends MinkContext
      */
     public function iShouldSeeItInMyTimeline()
     {
-        throw new PendingException();
+        $firstTimelineItem =
+            $this->getSession()
+                 ->getPage()
+                 ->find('xpath', "//div[@class='v-list__tile__content']//div");
+        Assert::assertEquals($this->chirpText, $firstTimelineItem->getText());
     }
 
     /**
