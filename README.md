@@ -42,9 +42,10 @@ or we will get it working day of.
 #### Extra Resources / Info
 - [JSON API](http://jsonapi.org/) - Our API will be implementing JSON API
 - [UUID Generator](https://www.uuidgenerator.net/) - You may want this during testing
+- [Vue](https://cli.vuejs.org/) - FYI: The frontend app is built using vuetify via vue-cli. You do not need any Vue knowledge, we will not be editing the frontend, just testing the end-to-end user experience. 
 
 #### Documentation for Dependencies
-One of the things we focus on in this workflow is decoupling dependencies. Any of these can be replaced at any time by other tool. This demo is not meant to be specific to any of these third party libraries, we simply use them to solve a common problem such as routing or validation, unrelated to the business logic code.
+One of the things we focus on in this workflow is decoupling dependencies. Any of these can be replaced at any time by another tool. This demo is not meant to be specific to any of these third party libraries, we simply use them to solve a common problem such as routing or validation, unrelated to the business logic code.
 
 - [Silex](https://silex.symfony.com/) - microframework / router
 - [Phinx docs](http://docs.phinx.org/en/latest/) - db migrations
@@ -56,4 +57,4 @@ One of the things we focus on in this workflow is decoupling dependencies. Any o
 - [Behat](http://behat.org/en/latest/)
 - [Behat Mink Extensions](https://github.com/Behat/MinkExtension/blob/master/doc/index.rst) - Mink is a browser driver
 - [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/) - PHP HTTP Client - used in some of our tests
-- [Faker](https://github.com/fzaninotto/Faker)
+- [Faker](https://github.com/fzaninotto/Faker) - Generates fake data 
