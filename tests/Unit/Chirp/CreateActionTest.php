@@ -36,9 +36,12 @@ class CreateActionTest extends TestCase
         $action->create($request);
     }
 
-//    public function testCreateReturnsInvalidChirpResponseOnTransformerException()
-//    {
-//    }
+    public function testCreateReturnsInvalidChirpResponseOnTransformerException()
+    {
+
+        $this->chirpTransformer->method('toChirp')
+                               ->willThrowException();
+    }
 //
 //    public function testCreateSendsChirpToPersistence()
 //    {
