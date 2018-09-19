@@ -49,7 +49,8 @@ class CreateChirpContext implements Context
                 'type'       => 'chirp',
                 'id'         => $this->id,
                 'attributes' => (object)[
-                    'text' => $this->chirpText
+                    'text'   => $this->chirpText,
+                    'author' => $this->faker->userName
                 ]
             ]
         ];

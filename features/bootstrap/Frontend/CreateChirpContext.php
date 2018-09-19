@@ -4,16 +4,31 @@ namespace Test\Behavior\Context\Frontend;
 
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\MinkExtension\Context\MinkContext;
+use Faker\Factory;
 
 class CreateChirpContext extends MinkContext
 {
+
+    /** @var \Faker\Generator */
+    private $faker;
+
+    /** @var string */
+    private $chirpText;
+
+    /** @var string */
+    private $id;
+
+    public function __construct()
+    {
+        $this->faker = Factory::create();
+    }
 
     /**
      * @Given I write a Chirp with :arg1 or less characters
      */
     public function iWriteAChirpWithOrLessCharacters($arg1)
     {
-        throw new PendingException();
+        $this->chirpText = $this->faker->text($arg1);
     }
 
     /**
@@ -21,7 +36,9 @@ class CreateChirpContext extends MinkContext
      */
     public function iSubmitTheChirp()
     {
-        throw new PendingException();
+        $this->fillField('chirp', $this->chirpText);
+        $this->fillField('author', 'me');
+        $this->pressButton('CHIRP!');
     }
 
     /**
