@@ -4,5 +4,6 @@ namespace Chirper\Chirp;
 
 interface ChirpPersistenceDriver
 {
-
+    /**  */
+    public function save(Chirp $chirp): bool;
 }
