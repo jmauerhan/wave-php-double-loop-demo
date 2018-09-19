@@ -6,7 +6,7 @@ default:
       contexts: [Test\Behavior\Context\Frontend\CreateChirpContext]
   extensions:
     Behat\MinkExtension:
-      base_url:  'http://local.chirper.com'
+      base_url:  'http://local.chirper.com:8080'
       sessions:
         default:
           selenium2:

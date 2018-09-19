@@ -29,6 +29,12 @@ class CreateChirpContext extends MinkContext
     public function iWriteAChirpWithOrLessCharacters($arg1)
     {
         $this->chirpText = $this->faker->text($arg1);
+        $this->getSession()->start();
+        $this->getSession()->visit('http://local.chirper.com:8080');
+        $page = $this->getSession()->getPage();
+
+        $page->fillField('chirp', $this->chirpText);
+        $page->fillField('author', 'me');
     }
 
     /**
@@ -36,9 +42,9 @@ class CreateChirpContext extends MinkContext
      */
     public function iSubmitTheChirp()
     {
-        $this->fillField('chirp', $this->chirpText);
-        $this->fillField('author', 'me');
-        $this->pressButton('CHIRP!');
+        $page = $this->getSession()->getPage();
+        $page->find('xpath', '//button')->click();
+        $this->getSession()->wait(1500);
     }
 
     /**
