@@ -2,6 +2,7 @@
 
 namespace Chirper\Chirp;
 
+use Chirper\Http\InternalServerErrorResponse;
 use Chirper\Http\Request;
 use Chirper\Http\Response;
 
@@ -27,6 +28,8 @@ class CreateAction
             $this->persistenceDriver->save($chirp);
         } catch (InvalidJsonException $exception) {
             return new InvalidChirpResponse([]);
+        } catch (PersistenceDriverException $driverException) {
+            return new InternalServerErrorResponse($driverException->getMessage());
         }
 
         return new Response();

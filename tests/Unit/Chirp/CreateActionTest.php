@@ -8,6 +8,8 @@ use Chirper\Chirp\CreateAction;
 use Chirper\Chirp\InvalidChirpResponse;
 use Chirper\Chirp\InvalidJsonException;
 use Chirper\Chirp\JsonChirpTransformer;
+use Chirper\Chirp\PersistenceDriverException;
+use Chirper\Http\InternalServerErrorResponse;
 use Chirper\Http\Request;
 use PHPUnit\Framework\MockObject\MockObject;
 use Test\TestCase;
@@ -65,11 +67,20 @@ class CreateActionTest extends TestCase
         $action  = new CreateAction($this->chirpTransformer, $this->persistenceDriver);
         $action->create($request);
     }
-//
-//    public function testCreateReturnsInternalServerErrorResponseOnPeristenceException()
-//    {
-//    }
-//
+
+    public function testCreateReturnsInternalServerErrorResponseOnPeristenceException()
+    {
+        $exception = new PersistenceDriverException();
+        $this->persistenceDriver->method('save')
+                                ->willThrowException($exception);
+
+        $request  = new Request('POST', 'chirp', [], "{}");
+        $action   = new CreateAction($this->chirpTransformer, $this->persistenceDriver);
+        $response = $action->create($request);
+        $this->assertInstanceOf(InternalServerErrorResponse::class, $response);
+
+    }
+
 //    public function testCreateSendsSavedChirpToTransformer()
 //    {
 //    }
