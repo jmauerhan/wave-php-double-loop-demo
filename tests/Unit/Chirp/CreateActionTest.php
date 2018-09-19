@@ -36,27 +36,27 @@ class CreateActionTest extends TestCase
         $action->create($request);
     }
 
-    public function testCreateReturnsInvalidChirpResponseOnTransformerException()
-    {
-    }
-
-    public function testCreateSendsChirpToPersistence()
-    {
-    }
-
-    public function testCreateReturnsInternalServerErrorResponseOnPeristenceException()
-    {
-    }
-
-    public function testCreateSendsSavedChirpToTransformer()
-    {
-    }
-
-    public function testCreateReturnsInternalServerErrorResponseOnTransformerException()
-    {
-    }
-
-    public function testCreateReturnChirpCreateResponseOnSuccess()
-    {
-    }
+//    public function testCreateReturnsInvalidChirpResponseOnTransformerException()
+//    {
+//    }
+//
+//    public function testCreateSendsChirpToPersistence()
+//    {
+//    }
+//
+//    public function testCreateReturnsInternalServerErrorResponseOnPeristenceException()
+//    {
+//    }
+//
+//    public function testCreateSendsSavedChirpToTransformer()
+//    {
+//    }
+//
+//    public function testCreateReturnsInternalServerErrorResponseOnTransformerException()
+//    {
+//    }
+//
+//    public function testCreateReturnChirpCreateResponseOnSuccess()
+//    {
+//    }
 }

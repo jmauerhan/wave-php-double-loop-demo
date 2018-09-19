@@ -21,7 +21,8 @@ class CreateAction
 
     public function create(Request $request): Response
     {
-
+        $json = $request->getBody()->getContents();
+        $this->chirpTransformer->toChirp($json);
         return new Response();
     }
 }
