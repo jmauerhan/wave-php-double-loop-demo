@@ -6,12 +6,14 @@ use Chirper\Chirp\ChirpPersistenceDriver;
 use Chirper\Chirp\CreateAction;
 use Chirper\Chirp\JsonChirpTransformer;
 use Chirper\Http\Request;
+use PHPUnit\Framework\MockObject\MockObject;
 use Test\TestCase;
 
 class CreateActionTest extends TestCase
 {
 
     private $persistenceDriver;
+    /** @var JsonChirpTransformer|MockObject */
     private $chirpTransformer;
 
     public function setUp()
@@ -25,6 +27,10 @@ class CreateActionTest extends TestCase
     {
         $body    = "{}";
         $request = new Request('POST', 'chirp', [], $body);
+
+        $this->chirpTransformer->expects($this->once())
+                               ->method('toChirp')
+                               ->with($body);
 
         $action = new CreateAction($this->chirpTransformer, $this->persistenceDriver);
         $action->create($request);
